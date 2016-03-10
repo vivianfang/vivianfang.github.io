@@ -1,9 +1,0 @@
-Terminal
-cd Documents/Website/
-
-ls - look at files in this directory
-cd FOLDER - change directory to be inside FOLDER
-
-git add -A
-git commit -m "Message here"
-git push origin master

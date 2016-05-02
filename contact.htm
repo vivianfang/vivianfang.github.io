@@ -6,6 +6,8 @@
         <title>VF Contact</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name ="keywords" content = "Vivian Fang, Photography, Contact, Information" />
+		<meta name="description" content="this is a page to contact Vivian Fang"/>
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -49,7 +51,7 @@
 					<div class="box container 75%">
 
 					<!-- Contact Form -->
-							<form method="post" action="#">
+							<form method="post" action="mailer.php">
 								<div class="row 50%">
 									<div class="6u 12u(mobile)"><input type="text" name="name" placeholder="Name" /></div>
 									<div class="6u 12u(mobile)"><input type="email" name="email" placeholder="Email" /></div>
@@ -65,6 +67,35 @@
 									</div>
 								</div>
 							</form>
+
+            <script  type="text/javascript">
+                var frmvalidator = new Validator("myform");
+                frmvalidator.addValidation("firstname","req","Please enter your First Name");
+                frmvalidator.addValidation("firstname", "maxlen=20", "Max length for FirstName is 20");
+                frmvalidator.addValidation("lastname", "alpha", "Alphabetic chars only");
+ 
+                frmvalidator.addValidation("lastname", "req", "Please enter your Last Name");
+                frmvalidator.addValidation("lastname", "maxlen=20");
+                frmvalidator.addValidation("lastname", "alpha", "Alphabetic chars only");
+ 
+                frmvalidator.addValidation("email","maxlen=50");
+                frmvalidator.addValidation("email", "req", "Please enter email address");
+                frmvalidator.addValidation("email","email");
+ 
+                frmvalidator.addValidation("phone","maxlen=50");
+                frmvalidator.addValidation("phone","numeric");
+ 
+                frmvalidator.addValidation("State", "dontselect=NULL");
+
+                frmvalidator.addValidation("reason", "selmin=1", "Select at least one reason for contact");
+
+                frmvalidator.addValidation("comments", "req", "Please include reason for inquiry in text box");
+
+               
+                </script>
+    
+
+
 
 					</div>
 				</div>

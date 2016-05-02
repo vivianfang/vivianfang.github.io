@@ -6,6 +6,8 @@
         <title>VF Life</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name ="keywords" content = "Vivian Fang, Photography, Photos, Life, Travel" />
+		<meta name="description" content="this is a page about Vivian's Life"/>
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -13,6 +15,7 @@
 		<style type="text/css">
 
 			h2 {color: black;}
+			h3 { text-align: center;}
 			table{
                 margin-top:10px;
                 margin-bottom: 10px;
@@ -35,12 +38,39 @@
 
 		</style>
 
-	
+		 <script type="text/javascript">
+            var pics = new Array("life1.jpg", "life2.jpg", "life3.jpg", "life4.jpg");
+            var cols = new Array("black", "black", "black", "black");
+
+            var caps = new Array("Paris", "Eiffel Tower", "Guinness Storehouse", "Tacos");
+            var c = 0;
+            var c1 = 0;
+            function showSlides() {
+                var mypic = document.getElementById("daimg");
+                var mycap = document.getElementById("cap");
+                mypic.src = pics[c];
+                mypic.style.borderColor = cols[c1]
+                mycap.innerHTML = caps[c];
+                ++c;
+                ++c1;
+                if (c >= pics.length) {
+                    c = 0;
+                }
+                if (c1 >= cols.length) {
+                    c1 = 0;
+                }
+                setTimeout("showSlides()", 3000);
+            }
+            
+
+
+        </script>
+
 	</head>
 
 
 
-	<body>
+	<body onload="showSlides()">
 		<header id="header">
 
 				<!-- Logo -->
@@ -58,10 +88,17 @@
 					</nav>
 
 			</header>
+			<h2>&nbsp; My Life</h2>
 
-		<h2>&nbsp; My Life</h2>
+			<p>
+            
+                <img id="daimg" src="life1.jpg" alt="Life Slideshow" title="My Life" />
+            </p>
+        		<h3 id="cap"></h3>
+       		
+			
 
-		<table>
+		<!--<table>
 				<tr>
 					<td> 
 						<img src="life1.jpg" alt="imghere" title="Italy">
@@ -78,10 +115,11 @@
 						<img src="life4.jpg" alt="imghere" title="Food">
 					</td>
 				</tr>
-			</table>
+			</table> --> 
 
 
         	<!-- Footer -->
+        	
 			<footer id="footer">
 
 				<!-- Icons -->
